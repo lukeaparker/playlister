@@ -1,15 +1,21 @@
-<!-- templates/playlists_index.html -->
-{% extends 'base.html' %}
+<!-- Starter code provided by Make School-->
 
-{% block content %}
+<!-- templates/playlists_index.html -->
+{% extends 'base.html' %} {% block content %}
 <h1>Playlists</h1>
 
-<div class='row'>
+<a href='/playlists/new'>New Playlist</a>
+
+<div class="row">
     {% for playlist in playlists %}
-        <div class='col-md-3'>
-            <h2><a href='/playlists/{{ playlist._id }}'>{{ playlist.title }}</a></h2>
-            <small>{{ playlist.description }}</small>
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title"><a href='/playlists/{{ playlist._id }}'>{{ playlist.title }}</a> - {{ playlist.rating }}</h2>
+                <small class="card-text">{{ playlist.description }}</small>
+            </div>
         </div>
+    </div>
     {% endfor %}
-</div>
-{% endblock %}
+</div> {% endblock %}
