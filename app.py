@@ -14,7 +14,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Return homepage."""
-    return render_template('playlists_index.html', msg='Flask is Cool!!')
+    return render_template('playlists_index.html', playlists=playlists.find())
 
 # OUR MOCK ARRAY OF PROJECTS
 #playlists = [
@@ -22,12 +22,10 @@ def index():
 #    { 'title': '80\'s Music', 'description': 'Don\'t stop believing!' }
 #]
 
-@app.route('/')
-def playlists_index():
-    """Show all playlists."""
-    return render_template('playlists_index.html', playlists=playlists.find())
-
-
+# @app.route('/index')
+# def playlists_index():
+#     """Show all playlists."""
+#     return render_template('playlists_index.html', playlists=playlists.find())
 
 @app.route('/playlists/new')
 def playlists_new():
